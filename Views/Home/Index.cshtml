@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="box">
+    <h3>Fullness: @Model.Fullness | Happiness: @Model.Happiness | Meals: @Model.Meals | Energy: @Model.Energy</h3>
+    <img src="~/images/pet.jpg" alt="A image of a pet"/>
+    <h4>@ViewBag.msg</h4>
+</div>
+
+<div class="buttons">
+    @if(@ViewBag.reset != true){
+        <input type="button" value="Play" onclick="location.href='@Url.Action("Play", "Home")'" />
+        <input type="button" value="Feed" onclick="location.href='@Url.Action("Feed", "Home")'" />
+        <input type="button" value="Work" onclick="location.href='@Url.Action("Work", "Home")'" />
+        <input type="button" value="Sleep" onclick="location.href='@Url.Action("Sleep", "Home")'" />
+    }
+    else{
+        <input type="button" value="Reset" onclick="location.href='@Url.Action("Reset", "Home")'" />
+    }
+</div>
